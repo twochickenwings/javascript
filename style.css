@@ -1,9 +1,17 @@
 @media screen and (max-width: 375px) {
     body {
         background-size: contain;
+        align-items: center;
     }
     .container{
         width: 40vw;
+    }
+    #main-image{
+        width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 body {
@@ -20,8 +28,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Hi Melody', sans-serif;
-    
+    font-family: 'Hi Melody', sans-serif;   
    
 }
 .title2 {
@@ -35,4 +42,31 @@ body {
     font-size: 2rem;
     color: #D63484
 }
+#pass-image {
+    width: 500px;
+    align-items: center;
 
+}
+#play-button {
+    background-color: #80dca9;
+    font-family: 'Hi Melody', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+#reset-button {
+    background-color: #80dca9;
+    font-family: 'Hi Melody', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+#chance-area {
+    font-size:  2rem;
+    font-weight: bold;
+}
+#user-input{
+    font-family: 'Hi Melody', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}

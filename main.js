@@ -62,8 +62,9 @@ function play(){
 
     }else {
         document.getElementById("pass-image").style.display = "block";
+        document.getElementById("up-image").style.display = "none";
+        document.getElementById("main-image").style.display = "none";
         resultArea.textContent = "맞추셨습니다!!!"    
-        gameOver = true
     }
 
     history.push(userValue);
@@ -79,26 +80,20 @@ function play(){
         resultArea.textContent = "탈락!";
     }
 }
-function reset(){
     function reset(){
-        pickRandomNum(); // pickRandomNumber()가 아닌 pickRandomNum()으로 수정
+        pickRandomNum();
         userInput.value = "";
-        document.getElementById("main-image").src = './assets/hello_danji.gif'; // = 제거
-        resultArea.textContent = "단지와 친해지세요!"; // resultText가 아닌 resultArea로 수정
-        gameOver = false;
+        document.getElementById("main-image").style.display ="block";
+        document.getElementById("fail-image").style.display ="none";
+        document.getElementById("pass-image").style.display ="none";
+        resultArea.textContent = "맞추면 선물 드림";
         playButton.disabled = false;
         chances = 5;
-        chanceArea.textContent = `남은 기회:${chances}`; // innerHTML이 아닌 textContent로 수정
-        history = []; // 사용자 입력 기록 초기화
-    
-        // 추가된 부분: 이미지 표시 초기화
-        document.getElementById("fail-image").style.display = "none";
-        document.getElementById("up-image").style.display = "none";
-        document.getElementById("pass-image").style.display = "none";
+        gameOver = false;
+        chanceArea.textContent = `남은 기회:${chances}번`;
+
     }
     
-
-}
 pickRandomNum() 
 
 //콘솔창의 결과를 다시 웹사이트로 들고오는 작업 필요.
