@@ -1,6 +1,8 @@
-@media (min-width: 375px) and (max-width:1601) {
+@media (min-width: 375px){
     body{
-        background-image: contain;
+        width:100%;
+        height:auto;
+        background-size: cover;
     }
     .container{
         display: block;
