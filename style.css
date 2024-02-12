@@ -1,3 +1,11 @@
+@media (max-width: 1601px) {
+    body{
+        background-image: contain;
+    }
+    .container{
+        display: block;
+    }
+}
 body {
     margin: 0;
     background-image: url('assets/danji_background.png');
@@ -8,8 +16,6 @@ body {
     border: 10px solid white;
     text-align: center;
     border-radius: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,8 +35,4 @@ body {
     font-size: 2rem;
     color: #D63484
 }
-@media screen and (max-width: 768px) {
-    body {
-        background-size: contain;
-    }
-}
+
