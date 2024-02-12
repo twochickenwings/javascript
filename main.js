@@ -23,8 +23,8 @@ let history = []
 //Go 버튼에 클릭 이벤트를 넣어주는 작업. play함수를 매개변수로 설정하고 아래에서 play함수 생성.
 
 playButton.addEventListener('click', play);
-resetButton.addEventListener('click',reset);
-userInput.addEventListener('focus',function(){userInput.value=""})
+resetButton.addEventListener('click', reset);
+userInput.addEventListener('focus',function(){userInput.value=""});
 function pickRandomNum(){
     computerNum = Math.floor(Math.random()*100)+1;
     console.log('정답',computerNum) 
@@ -51,11 +51,19 @@ function play(){
     console.log("chances",chances);
     if(userValue < computerNum){
         resultArea.textContent = "UP!!!";
+        document.getElementById("up-image").src = "./assets/breathe.gif";
+        document.getElementById("up-image").style.display = "block";
+        document.getElementById("main-image").style.display = "none";
     }else if (computerNum < userValue){
         resultArea.textContent = "DOWN!!!";
-    }else{
-        resultArea.textContent = "맞추셨습니다!!!";
-        gameOver = true;
+        document.getElementById("up-image").src = "./assets/breathe.gif";
+        document.getElementById("up-image").style.display = "block";
+        document.getElementById("main-image").style.display = "none";
+
+    }else {
+        document.getElementById("pass-image").style.display = "block";
+        resultArea.textContent = "맞추셨습니다!!!"    
+        gameOver = true
     }
 
     history.push(userValue);
@@ -66,15 +74,29 @@ function play(){
     }
     if(gameOver == true){
         playButton.disabled = true
+        document.getElementById("fail-image").style.display = "block";
+        document.getElementById("up-image").style.display = "none";
+        resultArea.textContent = "탈락!";
     }
 }
 function reset(){
-    //user input창이 깨끗하게 정리되고
-    userInput.value = ""
-    //새로운 번호가 생성되고
-    pickRandomNum();
-
-    resultArea.textContent = "결과 값이 나옵니다!"
+    function reset(){
+        pickRandomNum(); // pickRandomNumber()가 아닌 pickRandomNum()으로 수정
+        userInput.value = "";
+        document.getElementById("main-image").src = './assets/hello_danji.gif'; // = 제거
+        resultArea.textContent = "단지와 친해지세요!"; // resultText가 아닌 resultArea로 수정
+        gameOver = false;
+        playButton.disabled = false;
+        chances = 5;
+        chanceArea.textContent = `남은 기회:${chances}`; // innerHTML이 아닌 textContent로 수정
+        history = []; // 사용자 입력 기록 초기화
+    
+        // 추가된 부분: 이미지 표시 초기화
+        document.getElementById("fail-image").style.display = "none";
+        document.getElementById("up-image").style.display = "none";
+        document.getElementById("pass-image").style.display = "none";
+    }
+    
 
 }
 pickRandomNum() 
