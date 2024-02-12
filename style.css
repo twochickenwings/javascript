@@ -1,4 +1,4 @@
-@media (max-width: 1601px) {
+@media (min-width: 375px) and (max-width:1601) {
     body{
         background-image: contain;
     }
