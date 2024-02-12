@@ -9,7 +9,7 @@
 body {
     margin: 0;
     background-size: cover;
-    background-image: url('./assets/danji_background.png');
+    background-image: url('../first/assets/danji_background.png');
 }
 .container {
     background-color: rgba(238, 237, 251, 0.5);
