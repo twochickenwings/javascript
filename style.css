@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background-image: url('assets/danji_background.png');
+    background-size: cover;
+}
+.container {
+    background-color: rgba(238, 237, 251, 0.5);
+    border: 10px solid white;
+    text-align: center;
+    border-radius: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Hi Melody', sans-serif;
+    
+   
+}
+.title2 {
+    font-size: 3rem;
+    color: #FF9BD2;
+}
+.title3 {
+    font-size: 2rem;
+}
+.pink-text {
+    font-size: 2rem;
+    color: #D63484
+}
+@media screen and (max-width: 768px) {
+    body {
+        background-size: contain;
+    }
+}
